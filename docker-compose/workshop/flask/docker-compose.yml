@@ -1,0 +1,17 @@
+version: "3" # docker compose version
+services: # services: web, redis
+  backend:
+    build: ./backend # Build 在同資料夾的 Dockerfile
+    ports:
+      - "5001:5001" # port forward
+    links:
+      - db # 連結到 redis，讓兩個 container 可以互通網路
+  db:
+    container_name: db_host
+    image: postgres
+    ports:
+      - "5432:5432" # port forward
+    environment:
+      - POSTGRES_DB=website
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=user1234
