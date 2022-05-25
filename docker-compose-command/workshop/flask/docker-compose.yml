@@ -1,0 +1,28 @@
+version: "3" # docker compose version
+services: # services: web, redis
+  frontend:
+    build: ./frontend # Build 在同資料夾的 Dockerfile
+    ports:
+      - "5001:5001" # port forward
+    links:
+      - backend # 連結到 redis，讓兩個 container 可以互通網路
+    volumes:
+      - /home/yillkid/workspace/ntc-docker/docker-compose-command/workshop/flask/logs:/app/logs
+  backend:
+    container_name: backend_host
+    build: ./backend # Build 在同資料夾的 Dockerfile
+    ports:
+      - "5002:5001" # port forward
+    links:
+      - db # 連結到 redis，讓兩個 container 可以互通網路
+    volumes:
+      - /home/yillkid/workspace/ntc-docker/docker-compose-command/workshop/flask/logs:/app/logs
+  db:
+    container_name: db_host
+    image: postgres
+    ports:
+      - "5432:5432" # port forward
+    environment:
+      - POSTGRES_DB=website
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=user1234
