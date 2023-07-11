@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  flask:
+    image: yillkid/flask-demo-swarm
+    ports:
+      - "8080:8080"
+    networks:
+      - appnet
+    deploy:
+      mode: replicated
+      replicas: 2
+networks:
+  appnet:
+    driver: overlay
