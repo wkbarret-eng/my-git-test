@@ -1,6 +1,6 @@
-FROM python:3.6.9
+FROM python:latest
 
-LABEL version = "1.0" Copyright = "2022" owner = "yillkid"
+LABEL version = "1.0" Copyright = "2024" owner = "yillkid"
 
 EXPOSE 5001 
 
