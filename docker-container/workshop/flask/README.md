@@ -1,16 +1,16 @@
 # Docker Image exmaple
 
 ## Build
-sudo docker build . -t docker-flask
+docker build . -t docker-flask
 
 ## Run
-sudo docker run -ti -p 5001:5001 9317a9f6ac4e 
+docker run -ti -p 5001:5001 9317a9f6ac4e 
 
 ## VOLUME
 
 #### inner container
 ```bash=
-$ sudo docker container ls
+$ docker container ls
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 4fc68209e000   25b6c289ca8a   "/bin/sh -c 'python3…"   44 seconds ago   Up 43 seconds   0.0.0.0:5001->5001/tcp, :::5001->5001/tcp   goofy_galois
 bcba90d3d482   f985963d1861   "/bin/sh -c 'python3…"   12 minutes ago   Up 12 minutes                                               nifty_knuth
@@ -21,7 +21,7 @@ Daemon start!root@4fc68209e000:/app#
 
 #### outter container
 ```bash=
-$ sudo docker inspect 4fc68209e000
+$ docker inspect 4fc68209e000
 
 [
     {
@@ -271,6 +271,6 @@ $ sudo docker inspect 4fc68209e000
 ```
 
 ```bash=
-$ sudo cat /var/lib/docker/volumes/739dd07d8960c59c3b025ebc98676ef2d141dee6522001b1dad8602c9bd4eac7/_data/log.txt
+$ cat /var/lib/docker/volumes/739dd07d8960c59c3b025ebc98676ef2d141dee6522001b1dad8602c9bd4eac7/_data/log.txt
 Daemon start!
 ```
