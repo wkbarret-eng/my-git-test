@@ -1,7 +1,7 @@
 # Docker Image exmaple
 
 ## Build
-sudo docker build . -t docker-flask
+docker build . -t docker-flask
 
 ## Run
-sudo docker run -ti 9317a9f6ac4e 
+docker run -ti 9317a9f6ac4e 
