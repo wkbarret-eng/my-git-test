@@ -1,7 +1,6 @@
 ## 刪除原有的 Docker 映像檔：
 ```bash=
-$ sudo docker images
-[sudo] password for ubuntu: 
+$ docker images
 REPOSITORY        TAG       IMAGE ID       CREATED             SIZE
 docker-demo-app   latest    8d8665bf394e   About an hour ago   1.03GB
 python            latest    ae29c48b7429   4 weeks ago         1.02GB
@@ -9,7 +8,7 @@ python            latest    ae29c48b7429   4 weeks ago         1.02GB
 
 ## 刪除映像檔
 ```bash=
-$ sudo docker rmi 8d8665bf394e
+$ docker rmi 8d8665bf394e
 Untagged: docker-demo-app:latest
 Deleted: sha256:8d8665bf394e979aa43078395e651f9c6055957900c13530a5984cdf4d995aec
 Deleted: sha256:b4862502546406e8985e7969336c643288ce9a77a078cda282f199ea2a2f8a89
@@ -26,7 +25,7 @@ Deleted: sha256:f37ea8c5892d923676f0283bdc0e3a4503d6288c7efdf95377af4e8afda28aad
 
 ## 編譯 Docker image
 ```bash=
-$ sudo docker build . -t docker-demo-app
+$ docker build . -t docker-demo-app
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
@@ -98,7 +97,7 @@ Successfully tagged docker-demo-app:latest
 
 ## 檢查映像檔
 ```bash=
-$ sudo docker images
+$ docker images
 REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
 docker-demo-app   latest    70a9d85b14e0   51 seconds ago   1.03GB
 python            latest    ae29c48b7429   4 weeks ago      1.02GB
@@ -106,7 +105,7 @@ python            latest    ae29c48b7429   4 weeks ago      1.02GB
 
 ## 運行容器
 ```bash=
-s sudo docker run -ti 70a9d85b14e0$ 
+s docker run -ti 70a9d85b14e0$ 
 
  * Serving Flask app 'server'
  * Debug mode: off
