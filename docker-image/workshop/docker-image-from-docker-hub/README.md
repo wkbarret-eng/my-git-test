@@ -2,14 +2,13 @@
 
 ## Docker images (before)
 ```bash=
-$ sudo docker images
+$ docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 ```
 
 ## Docker search
 ```bash=
-$ sudo docker search python
-[sudo] password for ubuntu: 
+$ docker search python
 NAME                               DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
 python                             Python is an interpreted, interactive, objec…   9489      [OK]       
 hylang                             Hy is a Lisp dialect that translates express…   59        [OK]       
@@ -40,7 +39,7 @@ openwhisk/python3aiaction          Apache OpenWhisk runtime for Python 3 Action�
 
 ## Docker pull
 ```bash=
-$ sudo docker pull python
+$ docker pull python
 Using default tag: latest
 latest: Pulling from library/python
 71215d55680c: Pull complete 
@@ -57,14 +56,14 @@ docker.io/library/python:latest
 ```
 ## Docker images (after)
 ```bash=
-$ sudo docker images
+$ docker images
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 python       latest    ae29c48b7429   4 weeks ago   1.02GB
 ```
 
 ## Run
 ```bash=
-$ sudo docker run -ti python
+$ docker run -ti python
 Python 3.12.2 (main, Mar 12 2024, 11:02:14) [GCC 12.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 

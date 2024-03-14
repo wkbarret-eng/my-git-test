@@ -4,11 +4,11 @@
 #### 1. Manager : swarm init
 - command
 ```bash=
-sudo docker swarm init
+docker swarm init
 ```
 - output
 ```bash=
-$ sudo docker swarm init
+$ docker swarm init
 Swarm initialized: current node (m7b4v08ps23yz3d9kfxvivpec) is now a manager.
 
 To add a worker to this swarm, run the following command:
@@ -27,7 +27,7 @@ This node joined a swarm as a worker.
 
 #### 3. Docker swarm node ls ( n manager)
 ```bash=
- sudo docker node ls
+$ docker node ls
 ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
 m7b4v08ps23yz3d9kfxvivpec *   devops     Ready     Active         Leader           20.10.21
 69p7eacn7vzu7k5r00m8v7l5l     yillkid    Ready     Active                          20.10.21
@@ -37,13 +37,13 @@ m7b4v08ps23yz3d9kfxvivpec *   devops     Ready     Active         Leader        
 ## 佈署 Swarm
 #### 1. Login
 ```bash=
-$ sudo docker login 
+$ docker login 
 ```
 
 #### 2. 編譯 Docker image
 - command
 ```bash=
-$ sudo docker build -t yillkid/flask-swarm:latest .
+$ docker build -t yillkid/flask-swarm:latest .
 ```
 - output
 ```bash=
@@ -55,11 +55,11 @@ Successfully tagged yillkid/flask-swarm:latest
 #### 3. Push to Docker hub
 - command
 ```bash=
-$ sudo docker push yillkid/flask-swarm:latest
+$ docker push yillkid/flask-swarm:latest
 ```
 - output
 ```bash=
-$ sudo docker push yillkid/flask-swarm:latest
+$ docker push yillkid/flask-swarm:latest
 The push refers to repository [docker.io/yillkid/flask-swarm]
 8a9ce5932931: Pushed 
 b10bbbd8f247: Pushed 
@@ -77,11 +77,11 @@ latest: digest: sha256:1e194bb1ea6f472e6facefc30ac8d5019266051580d7d453bdf91a3d4
 #### 4. swarm deploy
 - command
 ```bash=
-$ sudo docker stack deploy --compose-file flask-app.yml apps --with-registry-auth
+$ docker stack deploy --compose-file flask-app.yml apps --with-registry-auth
 ```
 - output
 ```bash=
-$ sudo docker stack deploy --compose-file flask-app.yml apps --with-registry-auth
+$ docker stack deploy --compose-file flask-app.yml apps --with-registry-auth
 Creating network apps_appnet
 Creating service apps_flask
 ```

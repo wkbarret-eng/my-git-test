@@ -14,7 +14,7 @@ $ docker container ls
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 4fc68209e000   25b6c289ca8a   "/bin/sh -c 'python3…"   44 seconds ago   Up 43 seconds   0.0.0.0:5001->5001/tcp, :::5001->5001/tcp   goofy_galois
 bcba90d3d482   f985963d1861   "/bin/sh -c 'python3…"   12 minutes ago   Up 12 minutes                                               nifty_knuth
-yillkid@devops:~$ sudo docker exec -ti 4fc68209e000 bash
+yillkid@devops:~$ docker exec -ti 4fc68209e000 bash
 root@4fc68209e000:/app# cat logs/log.txt 
 Daemon start!root@4fc68209e000:/app#
 ```
